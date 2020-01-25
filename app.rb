@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'sinatra/reloader' if development? #Heroku not to use it.
+if development? require 'sinatra/reloader'  #Heroku not to use it.
 require './lib/caesar_cipher'
 
 get '/' do
