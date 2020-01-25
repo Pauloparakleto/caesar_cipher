@@ -1,4 +1,4 @@
-def caesar_cipher string, number
+def caesar_cipher string=".", number
     puts "Caesar_cipher initialized..."
     @string = string
     @number = number
