@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'sinatra/reloader'
+require 'sinatra/reloader' if development? #Heroku not to use it.
 
 
     def caesar_cipher string, number
