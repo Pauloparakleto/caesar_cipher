@@ -1,4 +1,7 @@
-class Caesar_cipher
+require 'sinatra'
+require 'sinatra/reloader'
+
+
     def caesar_cipher string, number
         puts "Caesar_cipher initialized..."
         @string = string
@@ -42,6 +45,17 @@ class Caesar_cipher
     def is_it_upcase?
         @string[@counter] != @string[@counter].downcase
     end
+
+
+#cript = Caesar_cipher.new
+
+get '/' do
+    word = params['word']
+    number = params['number'].to_i
+    code = caesar_cipher(word, number)
+
+    erb :index, :locals => {:word => word, :number => number, :code => code}
+
 end
-cript = Caesar_cipher.new
-puts cript.caesar_cipher("What a string!", 5) == "Bmfy f xywnsl!"
+
+#puts cript.caesar_cipher("What a string!", 5) == "Bmfy f xywnsl!"
