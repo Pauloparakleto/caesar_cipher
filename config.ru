@@ -1,2 +1,2 @@
-require './caesar_cipher_case_sensitive'
+require './app'
 run Sinatra::Application
